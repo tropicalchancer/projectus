@@ -6,7 +6,7 @@
  * Version: 1.0
  * URL: http://blacktie.co
  */
- 
+
 /* FONTS */
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,300,700,900);
@@ -15,14 +15,14 @@
 
 body {
   background-color: #f2f2f2;
-    font-family: "Lato";
+    font-family: "Helvetica";
     font-weight: 300;
-    font-size: 16px;
+    font-size: 15px;
     color: #555;
 
     -webkit-font-smoothing: antialiased;
     -webkit-overflow-scrolling: touch;
-    
+
     margin-top: 70px;
 }
 
@@ -119,7 +119,7 @@ a:after {
       -ms-transition: all 0.5s ease;
           transition: all 0.5s ease;
 }
- 
+
 .tilt:hover {
   -webkit-transform: rotate(-10deg);
      -moz-transform: rotate(-10deg);
@@ -133,7 +133,7 @@ a:after {
    ========================================================================== */
 
 #headerwrap {
-	background: url(../img/header-bg.jpg) no-repeat center top;
+	background: url(https://hd.unsplash.com/photo-1470633279801-d3a34cf9d5dd) no-repeat center top;
 	margin-top: -10px;
 	padding-top:20px;
 	text-align:center;
@@ -141,7 +141,7 @@ a:after {
 	background-position: center center;
 	min-height: 500px;
 	width: 100%;
-	
+
     -webkit-background-size: 100%;
     -moz-background-size: 100%;
     -o-background-size: 100%;
@@ -284,129 +284,3 @@ a:after {
 	font-size: 12px;
 	padding: 5px;
 }
-
-/***** MODAL CONTACT *****/
-.modal-content {
-	border-radius: 0px;
-
-}
-
-.modal-header {
-	background: #bdbdbd;
-	color: white;
-}
-
-.modal-header h4 {
-	font-weight: 700;
-}
-
-.modal-body {
-	background: #f2f2f2;
-    font-family: "Lato";
-    font-weight: 300;
-    font-size: 16px;
-    color: #555;
-}
-
-.modal-footer {
-	background: #f2f2f2;
-	margin-top: 0px; 
-}
-
-/* ==========================================================================
-   Pricing Tables
-   ========================================================================== */
-   
-.pricing-option {
-    padding-bottom: 40px;
-}
-
-.pricing-option .pricing-top {
-    position: relative;
-    background: #222;
-    color: white;
-    text-align: center;
-    font-weight: bold;
-
-    padding: 40px 20px 30px 20px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-.pricing-option .pricing-top .special-label {
-    display: block;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: #1abc9c;
-    text-transform: uppercase;
-    font-size: 15px;
-    font-weight: bold;
-    padding: 3px 0;
-}
-
-.special .pricing-top {
-    background: black;
-}
-
-.pricing-option .pricing-edition {
-    text-transform: uppercase;
-    display: block;
-    font-size: 25px;
-    letter-spacing: 8px;
-}
-
-.pricing-option .price {
-    display: inline-block;
-    position: relative;
-}
-
-.pricing-option .price sup {
-    position: absolute;
-    top: 50px;
-    left: -10px;
-    font-size: 24px;
-}
-
-.pricing-option .price .price-amount {
-    font-size: 108px;
-    letter-spacing: -4px;
-}
-
-.pricing-option .price small {
-    position: relative;
-    left: -10px;
-    font-size: 18px;
-}
-
-.pricing-option ul {
-    list-style: none;
-    margin: 0;
-    background: #eee;
-    text-align: center;
-    padding-left: 0px;
-}
-
-.pricing-option ul li {
-    border-bottom: solid 1px #e1e1e1;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.pricing-option .pricing-signup {
-    display: block;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 15px 10px;
-    color: white;
-    background: #1abc9c;
-}
-
-.pricing-option .pricing-signup:hover {
-    background: #ff7878;
-}
-
-
