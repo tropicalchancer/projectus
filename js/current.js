@@ -11,33 +11,33 @@ window.jQuery = window.$ = jQuery;
  * to offer multiple easing options
  *
  * TERMS OF USE - jQuery Easing
- * 
- * Open source under the BSD License. 
- * 
+ *
+ * Open source under the BSD License.
+ *
  * Copyright © 2008 George McGinley Smith
  * All rights reserved.
- * 
- * Redistribution and use in source and binary forms, with or without modification, 
+ *
+ * Redistribution and use in source and binary forms, with or without modification,
  * are permitted provided that the following conditions are met:
- * 
- * Redistributions of source code must retain the above copyright notice, this list of 
+ *
+ * Redistributions of source code must retain the above copyright notice, this list of
  * conditions and the following disclaimer.
- * Redistributions in binary form must reproduce the above copyright notice, this list 
- * of conditions and the following disclaimer in the documentation and/or other materials 
+ * Redistributions in binary form must reproduce the above copyright notice, this list
+ * of conditions and the following disclaimer in the documentation and/or other materials
  * provided with the distribution.
- * 
- * Neither the name of the author nor the names of contributors may be used to endorse 
+ *
+ * Neither the name of the author nor the names of contributors may be used to endorse
  * or promote products derived from this software without specific prior written permission.
- * 
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY 
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY
  * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
  * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
  *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
  *  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
- *  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED 
+ *  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED
  * AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
- *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
- * OF THE POSSIBILITY OF SUCH DAMAGE. 
+ *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+ * OF THE POSSIBILITY OF SUCH DAMAGE.
  *
 */
 
@@ -153,7 +153,7 @@ jQuery.extend( jQuery.easing,
 		return c*((t=t/d-1)*t*((s+1)*t + s) + 1) + b;
 	},
 	easeInOutBack: function (x, t, b, c, d, s) {
-		if (s == undefined) s = 1.70158; 
+		if (s == undefined) s = 1.70158;
 		if ((t/=d/2) < 1) return c/2*(t*t*(((s*=(1.525))+1)*t - s)) + b;
 		return c/2*((t-=2)*t*(((s*=(1.525))+1)*t + s) + 2) + b;
 	},
@@ -176,7 +176,7 @@ jQuery.extend( jQuery.easing,
 		return jQuery.easing.easeOutBounce (x, t*2-d, 0, c, d) * .5 + c*.5 + b;
 	}
 });
- 
+
 /* PrettyPhoto */
 /* ------------------------------------------------------------------------
 	Class: prettyPhoto
@@ -1333,18 +1333,18 @@ function calculateScroll() {
 			$('.navmenu li.scrollable')
 			.removeClass('active')
 			.eq(i).addClass('active');
-			
+
 			$('#top .navmenu li').first().addClass('active');
 			jQuery('.mobile_menu_wrapper').css({'display' : 'none'});
-			
+
 		}
 	})
 };
 
 function fullwidthslider() {
-	var full_slider_h = jQuery(window).height(); 
-	
-	jQuery('#top header').css({'top': full_slider_h + 'px'});	
+	var full_slider_h = jQuery(window).height();
+
+	jQuery('#top header').css({'top': full_slider_h + 'px'});
 }
 
 function animated_contents() {
@@ -1355,69 +1355,69 @@ function animated_contents() {
 		setTimeout(function () {
 			$this.addClass(animated);
 		}, 100 * i);
-	
+
 	});
 }
 
 jQuery(document).ready(function() {
-	
+
 	// if single_page
-	if (jQuery("body").hasClass("single_page")) {				
+	if (jQuery("body").hasClass("single_page")) {
 	}
 	else {
 		// Activete Menu Link
 		calculateScroll();
-	}	
-		
+	}
+
 	//Fixed Menu
 	if (jQuery('.fixed-menu').size() && fixed_menu == true) {
-		
+
 		jQuery('.fixed-menu').append('<div class="fixed-menu-wrapper">'+jQuery('#top header').html()+'</div>');
 		jQuery('.fixed-menu').find('.menu').children('li').each(function(){
 			jQuery(this).children('a').append('<div class="menu_fadder"/>');
 		});
-		
+
 		var fixd_menu = setInterval(scrolled_menu, 1);
 	}
-	
+
 	//MobileMenu
 	jQuery('#top header').append('<a href="javascript:void(0)" class="menu_toggler"/>');
-	jQuery('#top').append('<div class="mobile_menu_wrapper"><ul class="mobile_menu container"/></div>');	
+	jQuery('#top').append('<div class="mobile_menu_wrapper"><ul class="mobile_menu container"/></div>');
 	jQuery('.mobile_menu').html(jQuery('#top header').find('.navmenu').html());
 	jQuery('.mobile_menu_wrapper').hide();
 	jQuery('.menu_toggler').click(function(){
 		jQuery('.mobile_menu_wrapper').slideToggle(300);
 	});
-		
+
 	// if single_page
-	if (jQuery("body").hasClass("single_page")) {			
+	if (jQuery("body").hasClass("single_page")) {
 	}
 	else {
 		$(window).scroll(function(event) {
 		calculateScroll();
 		});
-		$('.navmenu ul li.scrollable a, .mobile_menu ul li.scrollable a, .next_section, #logo a').click(function() {  
+		$('.navmenu ul li.scrollable a, .mobile_menu ul li.scrollable a, .next_section, #logo a').click(function() {
 			if (jQuery(window).width() > 760) {
 				$('html, body').animate({scrollTop: $(this.hash).offset().top - 80}, 1000);
 			} else {
 				$('html, body').animate({scrollTop: $(this.hash).offset().top - 0}, 1000);
 			};
-			//$('html, body').animate({scrollTop: $(this.hash).offset().top - 80}, 1000);		
+			//$('html, body').animate({scrollTop: $(this.hash).offset().top - 80}, 1000);
 			return false;
 		});
 	};
-	
-	
+
+
 	// prettyPhoto
-	$("a[rel^='prettyPhoto'], .prettyPhoto").prettyPhoto();	
-	
+	$("a[rel^='prettyPhoto'], .prettyPhoto").prettyPhoto();
+
 	$('a[data-rel]').each(function() {
 		$(this).attr('rel', $(this).data('rel'));
 	});
-	
+
 	// contact form
 	$("#ajax-contact-form").submit(function() {
-		var str = $(this).serialize();		
+		var str = $(this).serialize();
 		$.ajax({
 			type: "POST",
 			url: "contact_form/contact_process.php",
@@ -1435,29 +1435,29 @@ jQuery(document).ready(function() {
 		});
 		return false;
 	});
-	
+
 	// Input and Textarea Focus
 	$('input[type=text]').focus(function() {
 		if($(this).attr('readonly') || $(this).attr('readonly') == 'readonly') return false;
 		if ($(this).val() === $(this).attr('title')) {
 				$(this).val('');
-		}   
+		}
 		}).blur(function() {
 		if($(this).attr('readonly') || $(this).attr('readonly') == 'readonly') return false;
 		if ($(this).val().length === 0) {
 			$(this).val($(this).attr('title'));
-		}                        
-	});	
+		}
+	});
 	$('textarea').focus(function() {
 		if ($(this).text() === $(this).attr('title')) {
 				$(this).text('');
-			}        
+			}
 		}).blur(function() {
 		if ($(this).text().length === 0) {
 			$(this).text($(this).attr('title'));
-		}                        
-	});		
-	
+		}
+	});
+
 	//Iframe transparent
 	$("iframe").each(function(){
 		var ifr_source = $(this).attr('src');
@@ -1470,22 +1470,22 @@ jQuery(document).ready(function() {
 		}
 		else $(this).attr('src',ifr_source+'?'+wmode);
 	});
-	
+
 	//mailchimp
 	jQuery('.mc_input').each(function(){
 		jQuery(this).width(jQuery(this).parents('.widget_mailchimpsf_widget').width()-30);
-	});	
-	
-	jQuery('.full_slider .flexslider li img.slide_bg').each(function(){
-		jQuery(this).parent().attr('style', 'background-image:url('+$(this).attr('src')+');');		
 	});
-			
+
+	jQuery('.full_slider .flexslider li img.slide_bg').each(function(){
+		jQuery(this).parent().attr('style', 'background-image:url('+$(this).attr('src')+');');
+	});
+
 	fullwidthslider();
-	
+
 	jQuery('.flexslider').flexslider({
         animation: "fade"
     });
-	
+
 	// Accordion
 	jQuery('.accordion').each(function(){
         if (jQuery(this).find('.expanded_yes').size() < 1) {
@@ -1500,20 +1500,20 @@ jQuery(document).ready(function() {
             collapsible: false
         });
     });
-	
+
 	jQuery('.ui-accordion-content').each(function(){
 	  jQuery(this).css({'height':'auto'});
 	});
-	
+
 	jQuery('.shortcode_toggles_item_title').click(function(){
 		jQuery(this).next().slideToggle();
 		jQuery(this).toggleClass('ui-state-active');
-	});	
+	});
 
     jQuery('.module_toggle').each(function(){
         jQuery(this).find('.expanded_yes').click();
     });
-	
+
 	if(jQuery(window).width() > 760) {
 		jQuery('.shortcode_tabs').each(function(){
 			if(jQuery(this).hasClass('type2')) {
@@ -1523,7 +1523,7 @@ jQuery(document).ready(function() {
 			}
 		});
 	}
-	
+
 	if (jQuery(window).width() > 760) {
 		jQuery('.skill_wrap').waypoint(function(){
 			jQuery('.skill .skill_text').each(function(){
@@ -1535,8 +1535,8 @@ jQuery(document).ready(function() {
 					lineCap: 'butt',
 					rotate: 0,
 					lineWidth: 9,
-					animate: 1000		
-				});		
+					animate: 1000
+				});
 			});
 		},{offset: 'bottom-in-view'});
 	} else {
@@ -1549,37 +1549,37 @@ jQuery(document).ready(function() {
 				lineCap: 'butt',
 				rotate: 0,
 				lineWidth: 9,
-				animate: 1000		
-			});		
+				animate: 1000
+			});
 		});
 	};
-	
+
 	//FadeIn content
 	animated_contents();
-	
+
 	/* Shortcode_messagebox close*/
 	jQuery('.shortcode_messagebox').find('.box_close').click(function(){
 		jQuery(this).parents('.module_messageboxes').fadeOut(400);
-	});		
-			
+	});
+
 });
 
 jQuery(window).load(function(){
 	/* Isotope Sorting */
 	jQuery(function(){
 	  var $container = $('.portfolio_block');
-	  
+
 	  $('.posts_block').isotope({
 		itemSelector : '.element'
 	  });
-	  
+
 	  $container.isotope({
 		itemSelector : '.element'
 	  });
-		
+
 	  var $optionSets = $('#options .optionset'),
 		  $optionLinks = $optionSets.find('a');
-	
+
 	  $optionLinks.click(function(){
 		var $this = $(this);
 		// don't proceed if already selected
@@ -1593,7 +1593,7 @@ jQuery(window).load(function(){
 		$this.parent('li').addClass('selected');
 		$this.parent('li').next('li').addClass('fltr_after');
 		$this.parent('li').prev('li').addClass('fltr_before');
-	
+
 		// make option object dynamically, i.e. { filter: '.my-filter-class' }
 		var options = {},
 			key = $optionSet.attr('data-option-key'),
@@ -1606,16 +1606,16 @@ jQuery(window).load(function(){
 		  changeLayoutMode( $this, options )
 		} else {
 		  // otherwise, apply new options
-		  $container.isotope(options);	  
-		}	
-		return false;	
+		  $container.isotope(options);
+		}
+		return false;
 	  });
 		$('.masonry').find('img').load(function(){
 			$container.isotope('reLayout');
-		}); 
-				
+		});
+
 	});
-	
+
 	jQuery.fn.portfolio_addon = function(addon_options) {
 		//Set Variables
 		var addon_el = jQuery(this),
@@ -1625,25 +1625,25 @@ jQuery(window).load(function(){
 			$newEls = '',
 			loaded_object = '',
 			$container = jQuery('.image-grid');
-		
+
 		jQuery('.btn_load_more').click(function(){
 			$newEls = '';
-			loaded_object = '';									   
+			loaded_object = '';
 			loaded_images = $container.find('.added').size();
 			if ((img_count - loaded_images) > img_per_load) {
 				now_load = img_per_load;
 			} else {
 				now_load = img_count - loaded_images;
 			}
-			
+
 			if ((loaded_images + now_load) == img_count) jQuery(this).parents('.load_more_cont').fadeOut();
-	
+
 			if (loaded_images < 1) {
 				i_start = 1;
 			} else {
 				i_start = loaded_images+1;
 			}
-	
+
 			if (now_load > 0) {
 				if (addon_options.type == 0) {
 					/*//1 Column Service Type
@@ -1654,16 +1654,16 @@ jQuery(window).load(function(){
 					//2-4 Columns Service Type
 					for (i = i_start-1; i < i_start+now_load-1; i++) {
 						loaded_object = loaded_object + '<div class="'+ addon_options.items[i].sortcategory +' element col-md-4 added"><div class="portfolio_item_wrapper"><div class="img_block hover_img"><a href="'+ addon_options.items[i].url +'"><img src="'+ addon_options.items[i].src +'" alt="" /><div class="item_fadder"></div><div class="link_ico"><i class="fa fa-link"></i></div></a></div><h3 class="gallery_title"><a href="'+ addon_options.items[i].url +'">'+ addon_options.items[i].title +'</a></h3></div></div>';
-	
+
 					}
-				}				
-				
+				}
+
 				$newEls = jQuery(loaded_object);
 				$container.isotope('insert', $newEls, function() {
 					$container.isotope('reLayout');
-					
-					jQuery('.prettyPhoto').prettyPhoto();												
-				});			
+
+					jQuery('.prettyPhoto').prettyPhoto();
+				});
 			}
 		});
 	}
@@ -1674,9 +1674,9 @@ jQuery(window).resize(function(){
 	jQuery('.mc_input').each(function(){
 		jQuery(this).width(jQuery(this).parents('.widget_mailchimpsf_widget').width()-30);
 	});
-	
+
 	fullwidthslider();
-	
+
 	if(jQuery(window).width() > 760) {
 		jQuery('.shortcode_tabs').each(function(){
 			if(jQuery(this).hasClass('type2')) {
@@ -1686,7 +1686,7 @@ jQuery(window).resize(function(){
 			}
 		});
 	}
-		
+
 });
 
 function scrolled_menu() {
@@ -1698,4 +1698,3 @@ function scrolled_menu() {
 		jQuery('#top header').removeClass('shadow_no');
 	}
 };
-
